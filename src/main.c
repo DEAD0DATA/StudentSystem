@@ -35,10 +35,20 @@ typedef struct studentList{
     struct studentList* prev;
 }studentNode;
 
+
+struct Selection {
+    int selectionID;
+    int studentID;
+    int courseID;
+    int courseScore;
+};
+
 typedef struct selectionList {
-    int studentId;
-    char studentName[20];
-    char department[20];
+    struct Selection selection;
+
+    struct selectionList* next;
+    struct selectionList* prev;
+
 }selectionNode;
 
 
@@ -46,7 +56,7 @@ typedef struct selectionList {
 
 courseNode courseListHead;  //  Create courselist
 studentNode studentListHead;
-
+selectionNode selectionListHead;
 
 int getInt() {
 //    Get user's input
@@ -81,6 +91,19 @@ void showStudent() {
         printf("Student name: %s\t", head->student.studentName);
         printf("Student department:%s \t", head->student.department);
         printf("Student's ID:%d", head->student.studentId);
+        head = head->next;
+    }
+}
+
+void showSelection() {
+//    Traversal course list
+    selectionNode *head;   // Create Node
+    head = selectionListHead.next; //  Copy listHead node to function node
+    while (head != NULL){
+        printf("\nSelection ID:%d\t", head->selection.selectionID);
+        printf("Student's ID:%d", head->selection.studentID);
+        printf("Course ID:%d", head->selection.courseID);
+        printf("Course Score:%d", head->selection.courseScore);
         head = head->next;
     }
 }
@@ -170,6 +193,42 @@ void addStudent() {
 
 }
 
+void addSelection() {
+    int studentID;
+    int courseID;
+
+    printf("\nPlease input the student's ID: ");
+    scanf("%d", &studentID);
+    printf("\nPlease input the course ID: ");
+    scanf("%d", &courseID);
+
+    selectionNode *NewData = (selectionNode *) malloc(sizeof(selectionNode));
+
+    NewData->selection.courseID = courseID;
+    NewData->selection.studentID = studentID;
+    NewData->selection.courseScore = NULL;
+
+    if (selectionListHead.next == NULL){
+        NewData->selection.selectionID = 1;
+        selectionListHead.next = NewData;
+        selectionListHead.prev = NewData;
+
+        NewData->prev = &selectionListHead;
+        NewData->next = NULL;
+
+    } else{
+        NewData->selection.selectionID = selectionListHead.prev->selection.selectionID + 1;
+        studentListHead.prev->next = NewData;
+        NewData->next = NULL;
+        NewData->prev = selectionListHead.prev;
+        selectionListHead.prev = NewData;
+        printf("UpdateTrue\n");
+    }
+
+
+}
+
+
 void showMainMenu() {
 
 
@@ -185,6 +244,10 @@ void showMainMenu() {
                     addCourse();
                     break;
                 case 2:
+                    addStudent();
+                    break;
+                case 6:
+                    showStudent();
                     break;
                 case 7:
                     showCourse();
@@ -236,6 +299,10 @@ void listInitial(){
     malloc(sizeof(studentListHead));
     studentListHead.next = NULL;
     studentListHead.prev = NULL;
+
+    malloc(sizeof(selectionListHead));
+    selectionListHead.next = NULL;
+    selectionListHead.prev = NULL;
 }
 
 void showLoading() {
