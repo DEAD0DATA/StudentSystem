@@ -14,12 +14,6 @@ struct Course{
     int credit;
 };
 
-struct Student {
-    int studentId;
-    char studentName[20];
-    char department[20];
-} *studentHead;
-
 typedef struct courseList{
     struct Course course;
 
@@ -27,15 +21,31 @@ typedef struct courseList{
     struct courseList* prev;
 }courseNode;
 
-struct StudentNode {
-    int selectionId;
+struct Student {
+    int listId;
     int studentId;
-    int courseId;
-    int score;
+    char studentName[20];
+    char department[20];
 };
 
+typedef struct studentList{
+    struct Student student;
 
-courseNode courseListHead;
+    struct studentList* next;
+    struct studentList* prev;
+}studentNode;
+
+typedef struct selectionList {
+    int studentId;
+    char studentName[20];
+    char department[20];
+}selectionNode;
+
+
+
+
+courseNode courseListHead;  //  Create courselist
+studentNode studentListHead;
 
 
 int getInt() {
@@ -58,6 +68,19 @@ void showCourse() {
         printf("department:%s \t", head->course.department);
         printf("teacher:%s \t", head->course.teacher);
         printf("credit:%d\n", head->course.credit);
+        head = head->next;
+    }
+}
+
+void showStudent() {
+//    Traversal course list
+    studentNode *head;   // Create Node
+    head = studentListHead.next; //  Copy listHead node to function node
+    while (head != NULL){
+        printf("\nList Id:%d\t", head->student.listId);
+        printf("Student name: %s\t", head->student.studentName);
+        printf("Student department:%s \t", head->student.department);
+        printf("Student's ID:%d", head->student.studentId);
         head = head->next;
     }
 }
@@ -109,6 +132,43 @@ void addCourse() {
 
 }
 
+void addStudent() {
+    int studentID;
+    char studentName[20];
+    char department[20];
+
+    printf("\nPlease input the student's name: ");
+    scanf("%s", studentName);
+    printf("\nPlease input the student's ID: ");
+    scanf("%d", &studentID);
+    printf("\nPlease input the department name: ");
+    scanf("%s", department);
+
+    studentNode *NewData = (studentNode *) malloc(sizeof(studentNode));
+
+    strcpy(NewData->student.studentName, studentName);
+    strcpy(NewData->student.department, department);
+    NewData->student.studentId = studentID;
+
+    if (studentListHead.next == NULL){
+        NewData->student.listId = 1;
+        studentListHead.next = NewData;
+        studentListHead.prev = NewData;
+
+        NewData->prev = &studentListHead;
+        NewData->next = NULL;
+
+    } else{
+        NewData->student.listId = studentListHead.prev->student.listId + 1;
+        studentListHead.prev->next = NewData;
+        NewData->next = NULL;
+        NewData->prev = studentListHead.prev;
+        studentListHead.prev = NewData;
+        printf("UpdateTrue\n");
+    }
+
+
+}
 
 void showMainMenu() {
 
@@ -129,6 +189,12 @@ void showMainMenu() {
                 case 7:
                     showCourse();
                     break;
+                case 9:
+                    addStudent();
+                    break;
+                case 11:
+                    showStudent();
+                    break;
                 default:
                     printf("Doesn't have the action!2\n");
                     break;
@@ -146,13 +212,15 @@ void showMainMenu() {
         printf("\n"
                "Select from the menu:\n\n"
                "1) Add course\n"
-               "2) Search student's selected courses\n"
-               "3) Edit student's course selection (By id)\n"
-               "4) Add newer student's course selection\n"
+               "2) Add newer student's course selection\n"
+               "3) Search student's selected courses\n"
+               "4) Edit student's course selection (By id)\n"
                "5) Delete student's course selection (By id)\n"
                "6) Show all students' course selection\n"
                "7) Show all the courses\n"
-               "8) Show the number of one student's specific course\n\n"
+               "9) Add student\n"
+               "10) Show the number of one student's specific course\n\n"
+               "11) Show students\n"
                "99) Quit\n\n"
                "Enter your choice: "
         );
@@ -160,10 +228,14 @@ void showMainMenu() {
 }
 
 
-void courseListInitial(){
+void listInitial(){
     malloc(sizeof(courseListHead));
     courseListHead.next = NULL;
     courseListHead.prev = NULL;
+
+    malloc(sizeof(studentListHead));
+    studentListHead.next = NULL;
+    studentListHead.prev = NULL;
 }
 
 void showLoading() {
@@ -193,7 +265,7 @@ void showLoading() {
         } else {
             switch (choice) {
                 case 1:
-                    courseListInitial();
+                    listInitial();
                     showMainMenu();
                     goto end;
                     break;
