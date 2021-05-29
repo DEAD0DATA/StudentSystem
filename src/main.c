@@ -53,7 +53,8 @@ void showCourse() {
     courseNode *head;   // Create Node
     head = courseListHead.next; //  Copy listHead node to function node
     while (head != NULL){
-        printf("\nCourse name:%s \t", head->course.courseName);
+        printf("\nCourse id: %d\t", head->course.courseId);
+        printf("Course name:%s \t", head->course.courseName);
         printf("department:%s \t", head->course.department);
         printf("teacher:%s \t", head->course.teacher);
         printf("credit:%d\n", head->course.credit);
@@ -63,7 +64,6 @@ void showCourse() {
 
 //  Main function:
 void addCourse() {
-    int courseId;
     char courseName[20];
     char teacher[20];
     char department[20];
@@ -90,6 +90,7 @@ void addCourse() {
     NewData->course.credit = credit;
 
     if (courseListHead.next == NULL){
+        NewData->course.courseId = 1;
         courseListHead.next = NewData;
         courseListHead.prev = NewData;
 
@@ -97,7 +98,7 @@ void addCourse() {
         NewData->next = NULL;
 
     } else{
-
+        NewData->course.courseId = courseListHead.prev->course.courseId + 1;
         courseListHead.prev->next = NewData;
         NewData->next = NULL;
         NewData->prev = courseListHead.prev;
