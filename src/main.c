@@ -1,3 +1,9 @@
+/**@file main.c
+ * @brief Program main entry
+ * @author Yikai Wang
+ */
+
+
 #include "stdio.h"
 #include "../lib/cJSON.h"
 #include "stdlib.h"
@@ -55,13 +61,15 @@ typedef struct selectionList {
 } selectionNode;
 
 
-courseNode courseListHead;  //  Create courselist
-studentNode studentListHead;
-selectionNode selectionListHead;
+courseNode courseListHead;  /** Course list */
+studentNode studentListHead; /** Student List */
+selectionNode selectionListHead; /** Selection List */
 
 int getInt() {
-//    Get user's input
-//    Return int
+    /**
+     * @brief Get user input number
+     * @return int
+     */
 
     int number;
     scanf("%d", &number);
@@ -71,13 +79,17 @@ int getInt() {
 
 
 void pause(){
-    // Pasue wait for user input
+    /**
+     * @brief Pause wait for user input
+     */
     printf("\nPlease press ENTER to continue.");
     getch();
 }
 
 void showCourse() {
-//    Traversal course list
+    /**
+     * @brief Print all courses information to screen.
+     */
     courseNode *head;   // Create Node
     head = courseListHead.next; //  Copy listHead node to function node
     while (head != NULL) {
@@ -92,7 +104,9 @@ void showCourse() {
 }
 
 void showStudent() {
-//    Traversal course list
+    /**
+     * @brief Print all students information to screen.
+     */
     int flag = 0;
     studentNode *head;   // Create Node
     head = studentListHead.next; //  Copy listHead node to function node
@@ -112,7 +126,9 @@ void showStudent() {
 }
 
 void showSelection() {
-//    Traversal course list
+    /**
+     * @brief Print all selections information.
+     */
     int flag = 0;
     selectionNode *head;   // Create Node
     head = selectionListHead.next; //  Copy listHead node to function node
@@ -653,6 +669,9 @@ void showMainMenu() {
 
 
 void listInitial() {
+    /**
+     * @brief Initial all double linked list
+     */
     malloc(sizeof(courseListHead));
     courseListHead.next = NULL;
     courseListHead.prev = NULL;
@@ -667,13 +686,13 @@ void listInitial() {
     selectionListHead.selection.selectionID = 0;
 }
 
-void showLoading() {
-//    Loading screen
-//    Print whether user wants to load from a file or create a new one
+void showLoadingMenu() {
+    /**
+     * @brief Print loading menu
+     */
 
 
-
-    int choice = NULL;
+    int choice = NULL; /*!< Val */
 
     //    Keep the program running.
     do {
@@ -708,6 +727,6 @@ void showLoading() {
 
 
 int main(void) {
-    showLoading();
+    showLoadingMenu();
     return 0;
 }

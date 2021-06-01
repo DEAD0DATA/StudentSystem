@@ -1,0 +1,288 @@
+\hypertarget{main_8c}{}\doxysection{C\+:/\+Users/dead0/\+CLion\+Projects/\+Student\+System/src/main.c File Reference}
+\label{main_8c}\index{C:/Users/dead0/CLionProjects/StudentSystem/src/main.c@{C:/Users/dead0/CLionProjects/StudentSystem/src/main.c}}
+
+
+Program main entry.  
+
+
+{\ttfamily \#include \char`\"{}stdio.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../lib/c\+JSON.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stdlib.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}string.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}conio.\+h\char`\"{}}\newline
+\doxysubsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{struct_course}{Course}}
+\item 
+struct \mbox{\hyperlink{structcourse_list}{course\+List}}
+\item 
+struct \mbox{\hyperlink{struct_student}{Student}}
+\item 
+struct \mbox{\hyperlink{structstudent_list}{student\+List}}
+\item 
+struct \mbox{\hyperlink{struct_selection}{Selection}}
+\item 
+struct \mbox{\hyperlink{structselection_list}{selection\+List}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structcourse_list}{course\+List}} \mbox{\hyperlink{main_8c_a8e75d43253233452ec5c1d6fa385fb6e}{course\+Node}}
+\item 
+typedef struct \mbox{\hyperlink{structstudent_list}{student\+List}} \mbox{\hyperlink{main_8c_aebe7851dfc5c38d00a79324f3d7dbe76}{student\+Node}}
+\item 
+typedef struct \mbox{\hyperlink{structselection_list}{selection\+List}} \mbox{\hyperlink{main_8c_aff8deec9d622b93487dafb3495a6ecc7}{selection\+Node}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{main_8c_a62b48a5d57e511a4d54bbf667cea8852}{get\+Int}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a7167f5c196fc5e167bfabde1a730e81d}{pause}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a22830db75fa79089289176feeb6f51bc}{show\+Course}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a87427ea3ba82f0234d9e3a191c0b1fc6}{show\+Student}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a59d40b1a8157f2f35bdc571fea2f7957}{show\+Selection}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a6e9bc62cb158d05b33287e7136e412d7}{add\+Course}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a39126b759b93ee84a65dd8383ecc6b5c}{add\+Student}} ()
+\item 
+int \mbox{\hyperlink{main_8c_a812c204d46f9be6aa10db989dd8348af}{verify\+Course}} (int course\+ID)
+\item 
+int \mbox{\hyperlink{main_8c_a9f6817620131a3223273e52471883eb1}{verify\+Student}} (int student\+ID)
+\item 
+void \mbox{\hyperlink{main_8c_ad5538c49a0e2e5bfc0e6c56ff66d7f39}{update\+Selection\+Course\+ID}} (\mbox{\hyperlink{main_8c_aff8deec9d622b93487dafb3495a6ecc7}{selection\+Node}} $\ast$head)
+\item 
+void \mbox{\hyperlink{main_8c_ae0a73f264f6c55d2e2cc215bf86c06f3}{update\+Selection\+Score}} (\mbox{\hyperlink{main_8c_aff8deec9d622b93487dafb3495a6ecc7}{selection\+Node}} $\ast$head)
+\item 
+void \mbox{\hyperlink{main_8c_a16e4fc2dbe6e00aba9bdd956a2c17f4f}{edit\+Selection}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a295c1a4bcca481ebc46cf2b30478899a}{search\+Selection\+By\+Course\+ID}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a18bee729f4f9dc161314461351ac7196}{search\+Selection\+By\+Course\+Name}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a1acfc19860c07dd11a655c38b6fb6682}{search\+Selection\+By\+Teacher}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a92c2faf4c8e900fccd84a65909773f3a}{add\+Selection}} ()
+\item 
+void \mbox{\hyperlink{main_8c_ac4bf2d612c3382d03d1424f83cfc8625}{delete\+Selection}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a189c2c37e50251521e9be48d726fba1d}{show\+Title\+Bar}} ()
+\item 
+void \mbox{\hyperlink{main_8c_ad5a1ae90f781d4094f850c4cd6a47855}{search\+Selection}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a547646815560a705ed2ab461dbf46d04}{show\+Main\+Menu}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a3f4008721d3053ddd4126d2f74d5aaf2}{list\+Initial}} ()
+\item 
+void \mbox{\hyperlink{main_8c_a591e9db5075f8e409da3764852cd57ce}{show\+Loading\+Menu}} ()
+\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{main_8c_a8e75d43253233452ec5c1d6fa385fb6e}{course\+Node}} \mbox{\hyperlink{main_8c_aea689c42f581cb9c71969aedcd240575}{course\+List\+Head}}
+\item 
+\mbox{\hyperlink{main_8c_aebe7851dfc5c38d00a79324f3d7dbe76}{student\+Node}} \mbox{\hyperlink{main_8c_ad2c5e6cde1db51ce717f733dd22084c0}{student\+List\+Head}}
+\item 
+\mbox{\hyperlink{main_8c_aff8deec9d622b93487dafb3495a6ecc7}{selection\+Node}} \mbox{\hyperlink{main_8c_a2d9adc9b6e1666bc5ddce7651bd9b379}{selection\+List\+Head}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Program main entry. 
+
+\begin{DoxyAuthor}{Author}
+Yikai Wang 
+\end{DoxyAuthor}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{main_8c_a8e75d43253233452ec5c1d6fa385fb6e}\label{main_8c_a8e75d43253233452ec5c1d6fa385fb6e}} 
+\index{main.c@{main.c}!courseNode@{courseNode}}
+\index{courseNode@{courseNode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{courseNode}{courseNode}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structcourse_list}{course\+List}} \mbox{\hyperlink{main_8c_a8e75d43253233452ec5c1d6fa385fb6e}{course\+Node}}}
+
+\mbox{\Hypertarget{main_8c_aff8deec9d622b93487dafb3495a6ecc7}\label{main_8c_aff8deec9d622b93487dafb3495a6ecc7}} 
+\index{main.c@{main.c}!selectionNode@{selectionNode}}
+\index{selectionNode@{selectionNode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{selectionNode}{selectionNode}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structselection_list}{selection\+List}} \mbox{\hyperlink{main_8c_aff8deec9d622b93487dafb3495a6ecc7}{selection\+Node}}}
+
+\mbox{\Hypertarget{main_8c_aebe7851dfc5c38d00a79324f3d7dbe76}\label{main_8c_aebe7851dfc5c38d00a79324f3d7dbe76}} 
+\index{main.c@{main.c}!studentNode@{studentNode}}
+\index{studentNode@{studentNode}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{studentNode}{studentNode}}
+{\footnotesize\ttfamily typedef struct \mbox{\hyperlink{structstudent_list}{student\+List}} \mbox{\hyperlink{main_8c_aebe7851dfc5c38d00a79324f3d7dbe76}{student\+Node}}}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a6e9bc62cb158d05b33287e7136e412d7}\label{main_8c_a6e9bc62cb158d05b33287e7136e412d7}} 
+\index{main.c@{main.c}!addCourse@{addCourse}}
+\index{addCourse@{addCourse}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{addCourse()}{addCourse()}}
+{\footnotesize\ttfamily void add\+Course (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a92c2faf4c8e900fccd84a65909773f3a}\label{main_8c_a92c2faf4c8e900fccd84a65909773f3a}} 
+\index{main.c@{main.c}!addSelection@{addSelection}}
+\index{addSelection@{addSelection}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{addSelection()}{addSelection()}}
+{\footnotesize\ttfamily void add\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a39126b759b93ee84a65dd8383ecc6b5c}\label{main_8c_a39126b759b93ee84a65dd8383ecc6b5c}} 
+\index{main.c@{main.c}!addStudent@{addStudent}}
+\index{addStudent@{addStudent}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{addStudent()}{addStudent()}}
+{\footnotesize\ttfamily void add\+Student (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_ac4bf2d612c3382d03d1424f83cfc8625}\label{main_8c_ac4bf2d612c3382d03d1424f83cfc8625}} 
+\index{main.c@{main.c}!deleteSelection@{deleteSelection}}
+\index{deleteSelection@{deleteSelection}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{deleteSelection()}{deleteSelection()}}
+{\footnotesize\ttfamily void delete\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a16e4fc2dbe6e00aba9bdd956a2c17f4f}\label{main_8c_a16e4fc2dbe6e00aba9bdd956a2c17f4f}} 
+\index{main.c@{main.c}!editSelection@{editSelection}}
+\index{editSelection@{editSelection}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{editSelection()}{editSelection()}}
+{\footnotesize\ttfamily void edit\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a62b48a5d57e511a4d54bbf667cea8852}\label{main_8c_a62b48a5d57e511a4d54bbf667cea8852}} 
+\index{main.c@{main.c}!getInt@{getInt}}
+\index{getInt@{getInt}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{getInt()}{getInt()}}
+{\footnotesize\ttfamily int get\+Int (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\hyperlink{struct_selection}{Selection}} List Get user input number @\mbox{\Hypertarget{main_8c_a3f4008721d3053ddd4126d2f74d5aaf2}\label{main_8c_a3f4008721d3053ddd4126d2f74d5aaf2}} 
+\index{main.c@{main.c}!listInitial@{listInitial}}
+\index{listInitial@{listInitial}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{listInitial()}{listInitial()}}
+{\footnotesize\ttfamily void list\+Initial (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Initial all double linked list\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a7167f5c196fc5e167bfabde1a730e81d}\label{main_8c_a7167f5c196fc5e167bfabde1a730e81d}} 
+\index{main.c@{main.c}!pause@{pause}}
+\index{pause@{pause}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{pause()}{pause()}}
+{\footnotesize\ttfamily void pause (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_ad5a1ae90f781d4094f850c4cd6a47855}\label{main_8c_ad5a1ae90f781d4094f850c4cd6a47855}} 
+\index{main.c@{main.c}!searchSelection@{searchSelection}}
+\index{searchSelection@{searchSelection}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{searchSelection()}{searchSelection()}}
+{\footnotesize\ttfamily void search\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a295c1a4bcca481ebc46cf2b30478899a}\label{main_8c_a295c1a4bcca481ebc46cf2b30478899a}} 
+\index{main.c@{main.c}!searchSelectionByCourseID@{searchSelectionByCourseID}}
+\index{searchSelectionByCourseID@{searchSelectionByCourseID}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{searchSelectionByCourseID()}{searchSelectionByCourseID()}}
+{\footnotesize\ttfamily void search\+Selection\+By\+Course\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a18bee729f4f9dc161314461351ac7196}\label{main_8c_a18bee729f4f9dc161314461351ac7196}} 
+\index{main.c@{main.c}!searchSelectionByCourseName@{searchSelectionByCourseName}}
+\index{searchSelectionByCourseName@{searchSelectionByCourseName}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{searchSelectionByCourseName()}{searchSelectionByCourseName()}}
+{\footnotesize\ttfamily void search\+Selection\+By\+Course\+Name (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a1acfc19860c07dd11a655c38b6fb6682}\label{main_8c_a1acfc19860c07dd11a655c38b6fb6682}} 
+\index{main.c@{main.c}!searchSelectionByTeacher@{searchSelectionByTeacher}}
+\index{searchSelectionByTeacher@{searchSelectionByTeacher}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{searchSelectionByTeacher()}{searchSelectionByTeacher()}}
+{\footnotesize\ttfamily void search\+Selection\+By\+Teacher (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a22830db75fa79089289176feeb6f51bc}\label{main_8c_a22830db75fa79089289176feeb6f51bc}} 
+\index{main.c@{main.c}!showCourse@{showCourse}}
+\index{showCourse@{showCourse}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{showCourse()}{showCourse()}}
+{\footnotesize\ttfamily void show\+Course (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a591e9db5075f8e409da3764852cd57ce}\label{main_8c_a591e9db5075f8e409da3764852cd57ce}} 
+\index{main.c@{main.c}!showLoadingMenu@{showLoadingMenu}}
+\index{showLoadingMenu@{showLoadingMenu}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{showLoadingMenu()}{showLoadingMenu()}}
+{\footnotesize\ttfamily void show\+Loading\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Print loading menu
+
+$<$ Val\mbox{\Hypertarget{main_8c_a547646815560a705ed2ab461dbf46d04}\label{main_8c_a547646815560a705ed2ab461dbf46d04}} 
+\index{main.c@{main.c}!showMainMenu@{showMainMenu}}
+\index{showMainMenu@{showMainMenu}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{showMainMenu()}{showMainMenu()}}
+{\footnotesize\ttfamily void show\+Main\+Menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a59d40b1a8157f2f35bdc571fea2f7957}\label{main_8c_a59d40b1a8157f2f35bdc571fea2f7957}} 
+\index{main.c@{main.c}!showSelection@{showSelection}}
+\index{showSelection@{showSelection}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{showSelection()}{showSelection()}}
+{\footnotesize\ttfamily void show\+Selection (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a87427ea3ba82f0234d9e3a191c0b1fc6}\label{main_8c_a87427ea3ba82f0234d9e3a191c0b1fc6}} 
+\index{main.c@{main.c}!showStudent@{showStudent}}
+\index{showStudent@{showStudent}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{showStudent()}{showStudent()}}
+{\footnotesize\ttfamily void show\+Student (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a189c2c37e50251521e9be48d726fba1d}\label{main_8c_a189c2c37e50251521e9be48d726fba1d}} 
+\index{main.c@{main.c}!showTitleBar@{showTitleBar}}
+\index{showTitleBar@{showTitleBar}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{showTitleBar()}{showTitleBar()}}
+{\footnotesize\ttfamily void show\+Title\+Bar (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_ad5538c49a0e2e5bfc0e6c56ff66d7f39}\label{main_8c_ad5538c49a0e2e5bfc0e6c56ff66d7f39}} 
+\index{main.c@{main.c}!updateSelectionCourseID@{updateSelectionCourseID}}
+\index{updateSelectionCourseID@{updateSelectionCourseID}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{updateSelectionCourseID()}{updateSelectionCourseID()}}
+{\footnotesize\ttfamily void update\+Selection\+Course\+ID (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8c_aff8deec9d622b93487dafb3495a6ecc7}{selection\+Node}} $\ast$}]{head }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_ae0a73f264f6c55d2e2cc215bf86c06f3}\label{main_8c_ae0a73f264f6c55d2e2cc215bf86c06f3}} 
+\index{main.c@{main.c}!updateSelectionScore@{updateSelectionScore}}
+\index{updateSelectionScore@{updateSelectionScore}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{updateSelectionScore()}{updateSelectionScore()}}
+{\footnotesize\ttfamily void update\+Selection\+Score (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{main_8c_aff8deec9d622b93487dafb3495a6ecc7}{selection\+Node}} $\ast$}]{head }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a812c204d46f9be6aa10db989dd8348af}\label{main_8c_a812c204d46f9be6aa10db989dd8348af}} 
+\index{main.c@{main.c}!verifyCourse@{verifyCourse}}
+\index{verifyCourse@{verifyCourse}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{verifyCourse()}{verifyCourse()}}
+{\footnotesize\ttfamily int verify\+Course (\begin{DoxyParamCaption}\item[{int}]{course\+ID }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a9f6817620131a3223273e52471883eb1}\label{main_8c_a9f6817620131a3223273e52471883eb1}} 
+\index{main.c@{main.c}!verifyStudent@{verifyStudent}}
+\index{verifyStudent@{verifyStudent}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{verifyStudent()}{verifyStudent()}}
+{\footnotesize\ttfamily int verify\+Student (\begin{DoxyParamCaption}\item[{int}]{student\+ID }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_aea689c42f581cb9c71969aedcd240575}\label{main_8c_aea689c42f581cb9c71969aedcd240575}} 
+\index{main.c@{main.c}!courseListHead@{courseListHead}}
+\index{courseListHead@{courseListHead}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{courseListHead}{courseListHead}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8c_a8e75d43253233452ec5c1d6fa385fb6e}{course\+Node}} course\+List\+Head}
+
+\mbox{\Hypertarget{main_8c_a2d9adc9b6e1666bc5ddce7651bd9b379}\label{main_8c_a2d9adc9b6e1666bc5ddce7651bd9b379}} 
+\index{main.c@{main.c}!selectionListHead@{selectionListHead}}
+\index{selectionListHead@{selectionListHead}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{selectionListHead}{selectionListHead}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8c_aff8deec9d622b93487dafb3495a6ecc7}{selection\+Node}} selection\+List\+Head}
+
+\mbox{\hyperlink{struct_student}{Student}} List \mbox{\Hypertarget{main_8c_ad2c5e6cde1db51ce717f733dd22084c0}\label{main_8c_ad2c5e6cde1db51ce717f733dd22084c0}} 
+\index{main.c@{main.c}!studentListHead@{studentListHead}}
+\index{studentListHead@{studentListHead}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{studentListHead}{studentListHead}}
+{\footnotesize\ttfamily \mbox{\hyperlink{main_8c_aebe7851dfc5c38d00a79324f3d7dbe76}{student\+Node}} student\+List\+Head}
+
+\mbox{\hyperlink{struct_course}{Course}} list 
